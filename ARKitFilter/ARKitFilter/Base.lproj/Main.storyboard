@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14111" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7SM-H7-K12">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Fjj-ut-Cog">
+            <objects>
+                <viewController id="7SM-H7-K12" customClass="ViewController" customModule="ARKitFilter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iyw-Xb-GSr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sao-sW-Ihe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5a-79-C7P">
+                                <rect key="frame" x="0.0" y="623" width="375" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparing Device..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAl-ve-gwz">
+                                        <rect key="frame" x="134" y="5" width="107.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="BAl-ve-gwz" firstAttribute="centerX" secondItem="y5a-79-C7P" secondAttribute="centerX" id="OvN-MN-HzH"/>
+                                    <constraint firstAttribute="height" constant="24" id="PWz-3b-foH"/>
+                                    <constraint firstItem="BAl-ve-gwz" firstAttribute="centerY" secondItem="y5a-79-C7P" secondAttribute="centerY" id="WU5-BS-2bP"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bGK-fg-Z1R">
+                                <rect key="frame" x="88" y="587" width="199" height="29"/>
+                                <segments>
+                                    <segment title="Colour"/>
+                                    <segment title="Black &amp; White"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="toggleCameraFeed:" destination="7SM-H7-K12" eventType="valueChanged" id="pam-hY-Ko2"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="y5a-79-C7P" firstAttribute="top" secondItem="bGK-fg-Z1R" secondAttribute="bottom" constant="8" id="5ol-Q7-AJ8"/>
+                            <constraint firstItem="Sao-sW-Ihe" firstAttribute="trailing" secondItem="snB-U0-pnN" secondAttribute="trailing" id="76F-xe-Akf"/>
+                            <constraint firstItem="snB-U0-pnN" firstAttribute="bottom" secondItem="y5a-79-C7P" secondAttribute="bottom" constant="20" id="C7l-za-m1e"/>
+                            <constraint firstItem="snB-U0-pnN" firstAttribute="trailing" secondItem="bGK-fg-Z1R" secondAttribute="trailing" constant="88" id="OaB-Hi-JTx"/>
+                            <constraint firstItem="bGK-fg-Z1R" firstAttribute="leading" secondItem="snB-U0-pnN" secondAttribute="leading" constant="88" id="Sye-KU-Bh9"/>
+                            <constraint firstAttribute="trailing" secondItem="y5a-79-C7P" secondAttribute="trailing" id="atB-QW-Y2X"/>
+                            <constraint firstItem="Sao-sW-Ihe" firstAttribute="top" secondItem="iyw-Xb-GSr" secondAttribute="top" id="muk-RE-5Sg"/>
+                            <constraint firstItem="y5a-79-C7P" firstAttribute="leading" secondItem="snB-U0-pnN" secondAttribute="leading" id="nj0-sJ-OOr"/>
+                            <constraint firstItem="Sao-sW-Ihe" firstAttribute="bottom" secondItem="snB-U0-pnN" secondAttribute="bottom" id="vvj-EQ-CVx"/>
+                            <constraint firstItem="Sao-sW-Ihe" firstAttribute="leading" secondItem="snB-U0-pnN" secondAttribute="leading" id="ygC-Vj-ctN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="snB-U0-pnN"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="augmentedRealityView" destination="Sao-sW-Ihe" id="pdI-EL-XdP"/>
+                        <outlet property="feedController" destination="bGK-fg-Z1R" id="EG2-5U-vOa"/>
+                        <outlet property="statusLabel" destination="BAl-ve-gwz" id="eM1-v2-N4K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bdj-tj-crf" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1532" y="58"/>
+        </scene>
+    </scenes>
+</document>

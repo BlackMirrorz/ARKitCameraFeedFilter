@@ -14,10 +14,12 @@ In order to render all `SceneKit` content in Black & White, you can look at usin
 All the code is fully commented so the apps functionality should be clear to everyone.
 
 **Requirements:**
+
 This project was written in Swift 4, and at the time of writing uses Xcode 9.4 Beta.
 The project is setup for iPhone, and in Portrait Orientation.
 
 **Core Functionality:**
+
 The demo project allows you to toggle the colour of the camera feed using a `UISegmentedControl`.
 
 The way in which the camera feed is rendered in  Black & White is manipulating the `CVPixelBuffer` within the the sessions `didUpdateFrame` delegate callback:
@@ -34,4 +36,3 @@ The way in which the camera feed is rendered in  Black & White is manipulating t
         
     }
 
-Looking at the `ARSCNView's` statistics during running the app, the `FPS` count remains at 60fps.

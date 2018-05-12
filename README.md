@@ -1,15 +1,11 @@
 
 
+
 # ARKitCameraFeedFilter
 
 This project is a basic example of applying a Black & White Filter to the camera feed on an `ARSession`.
 
 *Note that this does not render virtual content in Black & White, only the camera feed itself.*
-
-In order to render all `SceneKit` content in Black & White, you can look at using the following:
-
- 1. `SCNTechnique:` which is a specification for augmenting or postprocessing `SceneKit's` rendering of a scene using additional drawing passes with custom `Metal` or `OpenGL` shaders.
- 2. Using the `filters` property of an `SCNNode` which is simply an array of `CoreImage` filters to be applied to the rendered contents of the node.
 
 All the code is fully commented so the apps functionality should be clear to everyone.
 
@@ -36,3 +32,9 @@ The way in which the camera feed is rendered in  Black & White is manipulating t
         
     }
 
+**Considerations:**
+
+In order to render all `SceneKit` content in Black & White, you can look at using the following:
+
+ 1. `SCNTechnique:` which is a specification for augmenting or postprocessing `SceneKit's` rendering of a scene using additional drawing passes with custom `Metal` or `OpenGL` shaders.
+ 2. Using the `filters` property of an `SCNNode` which is simply an array of `CoreImage` filters to be applied to the rendered contents of the node.

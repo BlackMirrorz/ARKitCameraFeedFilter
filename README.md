@@ -18,7 +18,7 @@ The project is setup for iPhone, and in Portrait Orientation.
 
 The demo project allows you to toggle the colour of the camera feed using a `UISegmentedControl`.
 
-The way in which the camera feed is rendered in  Black & White is manipulating the `CVPixelBuffer` within the sessions `didUpdateFrame` delegate callback:
+The way in which the camera feed is rendered in  Black & White is achieved by manipulating the `CVPixelBuffer` within the sessions `didUpdateFrame` delegate callback:
 
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         

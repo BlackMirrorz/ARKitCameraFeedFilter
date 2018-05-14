@@ -151,7 +151,6 @@ class ViewController: UIViewController {
     //MARK: Black And White Toggling
     //------------------------------
     
-    
     /// Toggles The Setting Of The Camera Feed
     ///
     /// - Parameter controller: UISegmentedController

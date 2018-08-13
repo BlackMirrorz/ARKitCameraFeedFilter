@@ -34,16 +34,17 @@ extension ViewController: ARSessionDelegate{
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         
-        //Convert The Current Frame To Black & White
-        guard let currentBackgroundFrameImage = augmentedRealityView.session.currentFrame?.capturedImage,
-              let pixelBufferAddressOfPlane = CVPixelBufferGetBaseAddressOfPlane(currentBackgroundFrameImage, 1) else { return }
-        
-        let x: size_t = CVPixelBufferGetWidthOfPlane(currentBackgroundFrameImage, 1)
-        let y: size_t = CVPixelBufferGetHeightOfPlane(currentBackgroundFrameImage, 1)
-        memset(pixelBufferAddressOfPlane, 128, Int(x * y) * 2)
-        
+        if blackAndWhite{
+            
+            //Convert The Current Frame To Black & White
+            guard let currentBackgroundFrameImage = augmentedRealityView.session.currentFrame?.capturedImage,
+                let pixelBufferAddressOfPlane = CVPixelBufferGetBaseAddressOfPlane(currentBackgroundFrameImage, 1) else { return }
+            
+            let x: size_t = CVPixelBufferGetWidthOfPlane(currentBackgroundFrameImage, 1)
+            let y: size_t = CVPixelBufferGetHeightOfPlane(currentBackgroundFrameImage, 1)
+            memset(pixelBufferAddressOfPlane, 128, Int(x * y) * 2)
+        }
     }
-    
 }
 
 class ViewController: UIViewController {
